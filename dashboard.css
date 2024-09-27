@@ -1,0 +1,378 @@
+/*main part of each page*/
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-div {
+    height: 70px;
+    background-color: #b6cade;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.top-div p {
+    margin: 0;
+    font-family: sans-serif;
+    color: black;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.top-div a {
+    text-decoration: none;
+    color: #007bff;
+    margin-left: 70%;
+    font-size: 14px;
+}
+
+.top-div a:hover {
+    color: #0056b3;
+}
+
+.side-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100%;
+    background-color: #9DB6CF;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    font-size: 45px;
+}
+
+
+
+/*side bar of each page*/
+.side-bar a:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+.side-bar a:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+.side-bar a:nth-child(3) {
+    margin-bottom: 400px;
+}
+
+.side-bar a:nth-child(4) {
+    margin-top: auto;
+}
+
+.bottom-div {
+    height: 100%;
+    background-color: #EDE9E8;
+    position: relative;
+}
+
+.rectangle-left {
+    position: absolute;
+    height: 420px;
+    width: 56%;
+    background-color: #fdf9f8;
+    left: 80px;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+}
+
+.rectangle-under-left {
+    position: absolute;
+    height: 267px;
+    width: 58%;
+    left: 70px;
+    margin-top: 440px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/*the three boxes on main page of each page*/
+.box {
+    height: 200px;
+    width: 220px;
+    background-color: #d4e4ed;
+    border-radius: 20px;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    height: 60px;
+    width: 60px;
+    background-color: #9DB6CF;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 60px;
+}
+
+.box-text {
+    position: absolute;
+    top: 25%;
+    left: 85px;
+    transform: translate(0, -50%);
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-number {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    font-size: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.box-week {
+    position: absolute;
+    margin-top: 32%;
+    margin-left: 85px;
+    transform: translate(0, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: black;
+}
+
+.inner-div {
+    position: absolute;
+    height: 85%;
+    width: 30%;
+    background-color: #fdf9f8;
+    margin-top: 20px;
+    margin-right: 30px;
+    right: 0;
+    border-radius: 20px;
+}
+
+.donut-chart-container {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rankings-container {
+    margin-top: 10%;
+    margin-left: 5%;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+
+.ranking-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.rank {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.team-name {
+    flex: 1;
+    font-weight: bold;
+}
+
+.score {
+    font-size: 20px;
+    color: #555;
+}
+
+.highlight {
+    background-color: #8dd8f6;
+    font-weight: bold;
+}
+
+.logout-button {
+    margin-top: auto;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: #9DB6CF;
+    margin-bottom: 15px;
+}
+
+
+
+/*account info page*/
+.account_info {
+    position: absolute;
+    height: 85%;
+    width: 88%;
+    background-color: #d4e4ed;
+    left: 80px;
+    margin-top: 30px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.account_info h1 {
+    position: absolute;
+    top: -5px;
+    left: 35px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+}
+
+.white-rectangle {
+    width: 90%;
+    max-height: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.form-boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box {
+    margin-bottom: 10px;
+}
+
+.form-box-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-box-half {
+    flex: 1;
+}
+
+.form-box-row,
+.form-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-box input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.go-back-button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: inline-block;
+    padding: 7px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.go-back-button:hover {
+    background-color: #ddd;
+}
+
+
+
+/*more metrics part of each dashboard*/
+.metrics-div {
+    height: 100%;
+    position: relative;
+}
+
+.square-row {
+    display: flex;
+    margin-bottom: 1em;
+    margin-left: 80px;
+    margin-top: 1em;
+}
+
+.square {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    background-color: #ecf1f7;
+    border: 1px solid #000;
+    margin-right: 1em;
+}
+
+.square-row:nth-child(1) .square {
+    width: 400px;
+    height: 220px;
+}
+
+.square-row:nth-child(2) .square {
+    width: 300px;
+    height: 200px;
+}
+
+.square-row:nth-child(3) .square {
+    width: 600px;
+    height: 250px;
+}
+
+.square-text {
+    font-weight: bold;
+    margin: 10px;
+    position: absolute;
+    width: 100%;
+}
+
+.inner-square {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 40px);
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}

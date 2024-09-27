@@ -1,0 +1,196 @@
+Last login: Thu Jul 27 22:39:26 on ttys001
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Nafisas-MacBook-Pro:~ nafisanawal$ ssh nnawal2@codd.cs.gsu.edu
+nnawal2@codd.cs.gsu.edu's password: 
+Last login: Thu Jul 27 22:38:15 2023 from c-73-106-180-148.hsd1.ga.comcast.net
+   +
+   |   GSU Computer Science
+   |   Instructional Server
+   |   CODD.cs.gsu.edu
+   +
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[nnawal2@gsuad.gsu.edu@codd ~]$ mysql -u nnawal2 -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 365654
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use nnawal2
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [nnawal2]> select * from userinfo
+    -> ;
++------------+-----------+----------------------+------------+--------------------------------------------------------------+
+| first_name | last_name | email                | username   | password                                                     |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+
+| John       | Doe       | john.doe@example.com | johndoe123 | password123                                                  |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla     | $2y$10$ocQtYLJ411sSbfbk70ap2ehLIyc71JAs2EUTRKRDWTto7Nx9gTMHu |
+| Nafisa     | Nawal     | nnawal2@gsu.edu      | nnawal2    | $2y$10$cE7VV98CLVEjlur7Fl1mmuDZKk2cpS2QFtFriZfc2LBJFRhnF/3tu |
+| Mosla      | Uddin     | mosl@gmail.com       | mosla      | $2y$10$iC0aWMAi4Z/yKAUshu7o8u4HeRBWY244oRzPYuRtpnLQzZEdTXWWi |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla1    | $2y$10$JcGKdU6eKK8MvOdn4RIVp.zGbfBAqptdmesrOHPIXqu5QzUi3vPT. |
+| Faiza      | Ibnath    | faiza@gmail.com      | faiza      | $2y$10$3PBNDGF5YqX4N743GPkEFetLFTdLSVtRnuNtPLNHYJM1Yy16RsAeq |
+| Nafisa     | Nawal     | nawal@gmail.com      | nawalapa   | $2y$10$c3xOzUQSYV9gIJ4QHqItf.PLewEJyyCGvImqR.O.y8VXrm4TkVhS6 |
+| Faiyaz     | Faisal    | faiyazz@gmail.com    | faiyazzz   | $2y$10$ZpWBHkz8/RdLFjAcq05Z8ugcvWxlTIdAyZvJc6YnsJvS/apNkEUTm |
+| Mehwish    | Maisoora  | mehwish1@gmail.com   | mehwish1   | $2y$10$JFkvZ2PZ.2N3UUxnZ9PVSOTyX2zvN9nMSXxT2cHH5YRMKDfXm3YNu |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+
+9 rows in set (0.00 sec)
+
+MariaDB [nnawal2]> ALTER TABLE Customers
+    -> ADD Email varchar(255);
+ERROR 1146 (42S02): Table 'nnawal2.Customers' doesn't exist
+MariaDB [nnawal2]> ALTER TABLE Customers
+    -> ;                     
+ERROR 1146 (42S02): Table 'nnawal2.Customers' doesn't exist
+MariaDB [nnawal2]> 
+MariaDB [nnawal2]> 
+MariaDB [nnawal2]> 
+MariaDB [nnawal2]> 
+MariaDB [nnawal2]> alter table userinfo add user_role varchar(100);
+Query OK, 9 rows affected (0.01 sec)               
+Records: 9  Duplicates: 0  Warnings: 0
+
+MariaDB [nnawal2]> select * from userinfo;
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| first_name | last_name | email                | username   | password                                                     | user_role |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| John       | Doe       | john.doe@example.com | johndoe123 | password123                                                  | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla     | $2y$10$ocQtYLJ411sSbfbk70ap2ehLIyc71JAs2EUTRKRDWTto7Nx9gTMHu | NULL      |
+| Nafisa     | Nawal     | nnawal2@gsu.edu      | nnawal2    | $2y$10$cE7VV98CLVEjlur7Fl1mmuDZKk2cpS2QFtFriZfc2LBJFRhnF/3tu | NULL      |
+| Mosla      | Uddin     | mosl@gmail.com       | mosla      | $2y$10$iC0aWMAi4Z/yKAUshu7o8u4HeRBWY244oRzPYuRtpnLQzZEdTXWWi | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla1    | $2y$10$JcGKdU6eKK8MvOdn4RIVp.zGbfBAqptdmesrOHPIXqu5QzUi3vPT. | NULL      |
+| Faiza      | Ibnath    | faiza@gmail.com      | faiza      | $2y$10$3PBNDGF5YqX4N743GPkEFetLFTdLSVtRnuNtPLNHYJM1Yy16RsAeq | NULL      |
+| Nafisa     | Nawal     | nawal@gmail.com      | nawalapa   | $2y$10$c3xOzUQSYV9gIJ4QHqItf.PLewEJyyCGvImqR.O.y8VXrm4TkVhS6 | NULL      |
+| Faiyaz     | Faisal    | faiyazz@gmail.com    | faiyazzz   | $2y$10$ZpWBHkz8/RdLFjAcq05Z8ugcvWxlTIdAyZvJc6YnsJvS/apNkEUTm | NULL      |
+| Mehwish    | Maisoora  | mehwish1@gmail.com   | mehwish1   | $2y$10$JFkvZ2PZ.2N3UUxnZ9PVSOTyX2zvN9nMSXxT2cHH5YRMKDfXm3YNu | NULL      |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+9 rows in set (0.00 sec)
+
+MariaDB [nnawal2]> selecrt * from userinfo;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'selecrt * from userinfo' at line 1
+MariaDB [nnawal2]> select * from userinfo;
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| first_name | last_name | email                | username   | password                                                     | user_role |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| John       | Doe       | john.doe@example.com | johndoe123 | password123                                                  | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla     | $2y$10$ocQtYLJ411sSbfbk70ap2ehLIyc71JAs2EUTRKRDWTto7Nx9gTMHu | NULL      |
+| Nafisa     | Nawal     | nnawal2@gsu.edu      | nnawal2    | $2y$10$cE7VV98CLVEjlur7Fl1mmuDZKk2cpS2QFtFriZfc2LBJFRhnF/3tu | NULL      |
+| Mosla      | Uddin     | mosl@gmail.com       | mosla      | $2y$10$iC0aWMAi4Z/yKAUshu7o8u4HeRBWY244oRzPYuRtpnLQzZEdTXWWi | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla1    | $2y$10$JcGKdU6eKK8MvOdn4RIVp.zGbfBAqptdmesrOHPIXqu5QzUi3vPT. | NULL      |
+| Faiza      | Ibnath    | faiza@gmail.com      | faiza      | $2y$10$3PBNDGF5YqX4N743GPkEFetLFTdLSVtRnuNtPLNHYJM1Yy16RsAeq | NULL      |
+| Nafisa     | Nawal     | nawal@gmail.com      | nawalapa   | $2y$10$c3xOzUQSYV9gIJ4QHqItf.PLewEJyyCGvImqR.O.y8VXrm4TkVhS6 | NULL      |
+| Faiyaz     | Faisal    | faiyazz@gmail.com    | faiyazzz   | $2y$10$ZpWBHkz8/RdLFjAcq05Z8ugcvWxlTIdAyZvJc6YnsJvS/apNkEUTm | NULL      |
+| Mehwish    | Maisoora  | mehwish1@gmail.com   | mehwish1   | $2y$10$JFkvZ2PZ.2N3UUxnZ9PVSOTyX2zvN9nMSXxT2cHH5YRMKDfXm3YNu | NULL      |
+| nawal      | apa       | nawalapa@gmail.com   | nawaljadu  | $2y$10$JIJiStjoimpum3l6t.LE7.u60ILipbgQdSvEPBb09oXg8Y3cm0D9. | Buyer     |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+10 rows in set (0.00 sec)
+
+MariaDB [nnawal2]> client_loop: send disconnect: Broken pipe
+Nafisas-MacBook-Pro:~ nafisanawal$ 
+Nafisas-MacBook-Pro:~ nafisanawal$ ssh nnawal2@codd.cs.gsu.edu
+nnawal2@codd.cs.gsu.edu's password: 
+Last login: Thu Jul 27 23:07:41 2023 from c-73-106-180-148.hsd1.ga.comcast.net
+   +
+   |   GSU Computer Science
+   |   Instructional Server
+   |   CODD.cs.gsu.edu
+   +
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[nnawal2@gsuad.gsu.edu@codd ~]$ mysql -u nnawal2 -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 367778
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use nnawal2
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [nnawal2]> show * from userinfo
+    -> 
+    -> select * from userinfo
+    -> 
+    -> Ctrl-C -- exit!
+Aborted
+[nnawal2@gsuad.gsu.edu@codd ~]$ mysql -u nnawal2 -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 367784
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use nnawal2
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [nnawal2]> select * from userinfo
+    -> Ctrl-C -- exit!
+Aborted
+[nnawal2@gsuad.gsu.edu@codd ~]$ mysql -u nnawal2 -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 367788
+Server version: 5.5.68-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use nnawal2
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [nnawal2]> select * from userinfo;
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| first_name | last_name | email                | username   | password                                                     | user_role |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| John       | Doe       | john.doe@example.com | johndoe123 | password123                                                  | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla     | $2y$10$ocQtYLJ411sSbfbk70ap2ehLIyc71JAs2EUTRKRDWTto7Nx9gTMHu | NULL      |
+| Nafisa     | Nawal     | nnawal2@gsu.edu      | nnawal2    | $2y$10$cE7VV98CLVEjlur7Fl1mmuDZKk2cpS2QFtFriZfc2LBJFRhnF/3tu | NULL      |
+| Mosla      | Uddin     | mosl@gmail.com       | mosla      | $2y$10$iC0aWMAi4Z/yKAUshu7o8u4HeRBWY244oRzPYuRtpnLQzZEdTXWWi | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla1    | $2y$10$JcGKdU6eKK8MvOdn4RIVp.zGbfBAqptdmesrOHPIXqu5QzUi3vPT. | NULL      |
+| Faiza      | Ibnath    | faiza@gmail.com      | faiza      | $2y$10$3PBNDGF5YqX4N743GPkEFetLFTdLSVtRnuNtPLNHYJM1Yy16RsAeq | NULL      |
+| Nafisa     | Nawal     | nawal@gmail.com      | nawalapa   | $2y$10$c3xOzUQSYV9gIJ4QHqItf.PLewEJyyCGvImqR.O.y8VXrm4TkVhS6 | NULL      |
+| Faiyaz     | Faisal    | faiyazz@gmail.com    | faiyazzz   | $2y$10$ZpWBHkz8/RdLFjAcq05Z8ugcvWxlTIdAyZvJc6YnsJvS/apNkEUTm | NULL      |
+| Mehwish    | Maisoora  | mehwish1@gmail.com   | mehwish1   | $2y$10$JFkvZ2PZ.2N3UUxnZ9PVSOTyX2zvN9nMSXxT2cHH5YRMKDfXm3YNu | NULL      |
+| nawal      | apa       | nawalapa@gmail.com   | nawaljadu  | $2y$10$JIJiStjoimpum3l6t.LE7.u60ILipbgQdSvEPBb09oXg8Y3cm0D9. | Buyer     |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+10 rows in set (0.00 sec)
+
+MariaDB [nnawal2]> select * from userinfo;
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| first_name | last_name | email                | username   | password                                                     | user_role |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+| John       | Doe       | john.doe@example.com | johndoe123 | password123                                                  | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla     | $2y$10$ocQtYLJ411sSbfbk70ap2ehLIyc71JAs2EUTRKRDWTto7Nx9gTMHu | NULL      |
+| Nafisa     | Nawal     | nnawal2@gsu.edu      | nnawal2    | $2y$10$cE7VV98CLVEjlur7Fl1mmuDZKk2cpS2QFtFriZfc2LBJFRhnF/3tu | NULL      |
+| Mosla      | Uddin     | mosl@gmail.com       | mosla      | $2y$10$iC0aWMAi4Z/yKAUshu7o8u4HeRBWY244oRzPYuRtpnLQzZEdTXWWi | NULL      |
+| Mosla      | Uddin     | umosla@gmail.com     | umosla1    | $2y$10$JcGKdU6eKK8MvOdn4RIVp.zGbfBAqptdmesrOHPIXqu5QzUi3vPT. | NULL      |
+| Faiza      | Ibnath    | faiza@gmail.com      | faiza      | $2y$10$3PBNDGF5YqX4N743GPkEFetLFTdLSVtRnuNtPLNHYJM1Yy16RsAeq | NULL      |
+| Nafisa     | Nawal     | nawal@gmail.com      | nawalapa   | $2y$10$c3xOzUQSYV9gIJ4QHqItf.PLewEJyyCGvImqR.O.y8VXrm4TkVhS6 | NULL      |
+| Faiyaz     | Faisal    | faiyazz@gmail.com    | faiyazzz   | $2y$10$ZpWBHkz8/RdLFjAcq05Z8ugcvWxlTIdAyZvJc6YnsJvS/apNkEUTm | NULL      |
+| Mehwish    | Maisoora  | mehwish1@gmail.com   | mehwish1   | $2y$10$JFkvZ2PZ.2N3UUxnZ9PVSOTyX2zvN9nMSXxT2cHH5YRMKDfXm3YNu | NULL      |
+| nawal      | apa       | nawalapa@gmail.com   | nawaljadu  | $2y$10$JIJiStjoimpum3l6t.LE7.u60ILipbgQdSvEPBb09oXg8Y3cm0D9. | Buyer     |
+| Gina       | Love      | gina@gmail.com       | glove      | $2y$10$Ko9fgLJSQLiHZBkXJoBU6.SqLK4hXFPwSIW4HRT8zp0O7r5KYefzy | Seller    |
++------------+-----------+----------------------+------------+--------------------------------------------------------------+-----------+
+11 rows in set (0.00 sec)
+
+MariaDB [nnawal2]> 

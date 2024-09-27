@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="chart.js"></script>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.gsu.edu https://cdnjs.cloudflare.com;">
+
+</head>
+<body>
+    <div class="top-div">
+        <p>Admin Dashboard</p>
+    </div>
+    <div class="side-bar">
+        <a href="https://codd.cs.gsu.edu/~nnawal2/WP/PW/FinalProject/index.html"> 
+            <span class="icon">&#127968;</span> <!-- Unicode for house icon -->
+        </a>
+        <a href="dashboardaccount.html">
+            <span class="icon">&#128100;</span> <!-- Unicode for user icon -->
+        </a>
+        <a href="dashboardmetrics.html">
+            <span class="icon">&#128200;</span> <!-- Unicode for line chart icon -->
+        </a>
+        <a class="logout-button" href="https://codd.cs.gsu.edu/~sbell52/WP/PW/PW03/admin-login.html">
+            <span class="icon">&#128274;</span> <!-- Unicode for log out icon -->
+        </a>
+    </div>
+    <div class="bottom-div">
+        <div class="rectangle-left">
+            <canvas id="lineChart"></canvas>
+        </div>
+        <div class="rectangle-under-left">
+            <div class="box">
+                <div class="circle">&#128100;</div>
+                <span class="box-text">New Buyers</span>
+                <span class="box-number">1.9k</span>
+                <span class="box-week">This Week</span>
+            </div>
+            <div class="box">
+                <div class="circle">&#128100;</div>
+                <span class="box-text">New Sellers</span>
+                <span class="box-number">1.3k</span>
+                <span class="box-week">This Week</span>
+            </div>
+            <div class="box">
+                <div class="circle">&#128176;</div>
+                <span class="box-text">Revenue</span>
+                <span class="box-number">30k</span>
+                <span class="box-week">This Week</span>
+            </div>
+        </div>
+        <div class="inner-div">
+            <div class="donut-chart-container">
+                <canvas id="donutChart"></canvas>
+            </div>
+            <div class="rankings-container">
+                <div class="ranking-row highlight">
+                    <div class="team-name">Top Buyers</div>
+                </div>
+                <div class="ranking-row">
+                    <div class="rank">1</div>
+                    <div class="team-name">John Doe</div>
+                    <div class="score">94</div>
+                </div>
+                <div class="ranking-row">
+                    <div class="rank">2</div>
+                    <div class="team-name">Jane Doe</div>
+                    <div class="score">86</div>
+                </div>
+                <div class="ranking-row">
+                    <div class="rank">3</div>
+                    <div class="team-name">Bob the Builder</div>
+                    <div class="score">27</div>
+                </div>
+                <div class="ranking-row">
+                    <div class="rank">4</div>
+                    <div class="team-name">Patricia</div>
+                    <div class="score">67</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="donut_chart.js" type="text/javascript"></script>
+    <script src="earning.js" type="text/javascript"></script>
+</body>
+</html>

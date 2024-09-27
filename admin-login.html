@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="loginstyles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="login-form" method="post">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Log in</button>
+    </form>
+
+    <div id="error-message" style="display: none; color: red;"></div>
+
+    <script>
+      document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        fetch("https://codd.cs.gsu.edu/~sbell52/WP/PW/PW03/login.php", {
+          method: "POST",
+          body: formData
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.text();
+        })
+        .then(data => {
+          if (data.trim() === "success") {
+            window.location.replace("https://codd.cs.gsu.edu/~sbell52/WP/PW/PW03/dashboard.html");
+          } else {
+            document.getElementById("error-message").style.display = "block";
+            document.getElementById("error-message").innerText = data;
+          }
+        })
+        .catch(error => {
+          console.error("Error:", error);
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>

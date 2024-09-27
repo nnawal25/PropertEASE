@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="chart.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.gsu.edu https://cdnjs.cloudflare.com;">
+</head>
+<body>
+    <div class="top-div">
+        <p>Admin Dashboard</p>
+        <a href="dashboard.html">Go Back</a>
+    </div>
+    <div class="side-bar">
+        <a href="https://codd.cs.gsu.edu/~nnawal2/WP/PW/FinalProject/index.html"> 
+            <span class="icon">&#127968;</span> <!-- Unicode for house icon -->
+        </a>
+        <a href="dashboardaccount.html">
+            <span class="icon">&#128100;</span> <!-- Unicode for user icon -->
+        </a>
+        <a href="dashboardmetrics.html">
+            <span class="icon">&#128200;</span> <!-- Unicode for line chart icon -->
+        </a>
+        <a class="logout-button" href="https://codd.cs.gsu.edu/~sbell52/WP/PW/PW03/admin-login.html">
+            <span class="icon">&#128274;</span> <!-- Unicode for log out icon -->
+        </a>
+    </div>
+    <div class="metrics-div">
+        <div class="square-row">
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="lineChart" width="400" height="200"></canvas>
+                </div>
+                <p class="square-text">Number of Listings</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="salesPerDayChart" width="400" height="200"></canvas>
+                </div>
+                <p class="square-text">Sales per Day</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="paymentMethodsChart" width="400" height="180"></canvas>
+                </div>
+                <p class="square-text">Credit Sales</p>
+            </div>
+        </div>
+        <div class="square-row">
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="sellersAndBuyersChart" width="300" height="200"></canvas>
+                </div>
+                <p class="square-text">Customer Count</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="sellersRankingsChart" width="300" height="200"></canvas>
+                </div>
+                <p class="square-text">Top Sellers</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="buyersRankingsChart" width="300" height="200"></canvas>
+                </div>
+                <p class="square-text">Top Buyers</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="revenueChart" width="300" height="200"></canvas>
+                </div>
+                <p class="square-text">Company Revenue</p>
+            </div>
+        </div>
+        <div class="square-row">
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="neighborhoodsChart" width="600" height="250"></canvas>
+                </div>
+                <p class="square-text">Sales by Location</p>
+            </div>
+            <div class="square">
+                <div class="inner-square">
+                    <canvas id="housingStylesHistogram" width="600" height="250"></canvas>
+                </div>
+                <p class="square-text">Top Housing Styles</p>
+            </div>
+        </div>
+    </div>
+    <script src="metrics.js" type="text/javascript"></script>
+</body>
+</html>

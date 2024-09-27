@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="top-div">
+        <p>Admin Dashboard</p>
+    </div>
+    <div class="side-bar">
+        <a href="https://codd.cs.gsu.edu/~nnawal2/WP/PW/FinalProject/index.html"> 
+            <span class="icon">&#127968;</span> <!-- Unicode for house icon -->
+        </a>
+        <a href="dashboardaccount.html">
+            <span class="icon">&#128100;</span> <!-- Unicode for user icon -->
+        </a>
+        <a href="dashboardmetrics.html">
+            <span class="icon">&#128200;</span> <!-- Unicode for line chart icon -->
+        </a>
+        <a class="logout-button" href="https://codd.cs.gsu.edu/~sbell52/WP/PW/PW03/admin-login.html">
+            <span class="icon">&#128274;</span> <!-- Unicode for log out icon -->
+        </a>
+    </div>
+    <div class="account_info">
+        <h1>Account Information</h1>
+        <div class="white-rectangle bottom-rectangle">
+            <div class="form-box">
+                <label for="userName">Username</label>
+                <input type="text" id="userName" name="userName" value="PropertyAdmin" readonly>
+            </div>
+            <div class="form-box-row">
+                <div class="form-box form-box-half">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" value="John" readonly>
+                </div>
+                <div class="form-box form-box-half">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" value="Doe" readonly>
+                </div>
+            </div>
+            <div class="form-box">
+                <label for="primaryEmail">Email</label>
+                <input type="email" id="primaryEmail" name="primaryEmail" value="PropertyEASE@gmail.com" readonly>
+            </div>
+            <div class="form-box">
+                <label for="primaryPhone">Primary Phone</label>
+                <input type="tel" id="primaryPhone" name="primaryPhone" value="999999999" readonly>
+            </div>
+            <div class="form-box-row">
+                <div class="form-box">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" name="currentPassword" placeholder="********" readonly>
+                </div>
+                <div class="form-box">
+                    <button type="button" class="update-password-button">Update Password</button>
+                </div>
+            </div>
+        </div>
+        <a href="dashboard.html" class="go-back-button">Go back</a>
+    </div>
+</body>
+</html>
